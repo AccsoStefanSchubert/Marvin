@@ -15,6 +15,8 @@ Marvin provides some microservice endpoints. Just start Marvin by launching 🚀
 |/api/cmd/initiateProtocol/&lt;x&gt;|**x=88** - just be happy and work with no complaints <br/> **x=100** - be unhappy, claim to work to much <br/> **x=9** - play death don't answer anymore on healthchecks. <br/> **x=-1** - dissolve Marvin! (i.e. corresponding instance will stop to exists) <br/> **x=53** - Show your IP Address.|  
 
 This should be enough for the most experiments. 
+
+A ready-to-use collection of these requests for IntelliJ's built-in HTTP Client can be found in [`httpClient`](httpClient/marvin-requests.http) (environment config: [`httpClient`](httpClient/http-client.env.json)).
 As you clone Marvin to scale in some cluster environments, he will pick up a random number between 1 and 1000 as ID, and place it in his answers. So you have a change to see which instance answers.
 
 You read it till the end, so it was not just TL;DR and you may find Marvin useful. Let Marvin and me know on GitHub if he was useful or if you miss something. 

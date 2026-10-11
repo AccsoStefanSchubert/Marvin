@@ -9,16 +9,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
-import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+import org.springframework.web.servlet.view.json.JacksonJsonView;
+import tools.jackson.databind.SerializationFeature;
+import tools.jackson.databind.json.JsonMapper;
 
 @Configuration
 public class RESTConfiguration
 {
     @Bean
     public View jsonTemplate() {
-        MappingJackson2JsonView view = new MappingJackson2JsonView();
-        view.setPrettyPrint(true);
-        return view;
+        JsonMapper jsonMapper = JsonMapper.builder()
+                .enable(SerializationFeature.INDENT_OUTPUT)
+                .build();
+        return new JacksonJsonView(jsonMapper);
     }
 
     @Bean

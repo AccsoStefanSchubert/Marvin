@@ -13,7 +13,7 @@
         <!-- Taking care to have all spring dependencies right. -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.0</version>
+        <version>4.1.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -48,10 +48,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>25</java.version>
-        <lombok.version>1.18.42</lombok.version>
-        <owasp.plugin.version>12.1.6</owasp.plugin.version>
-        <maven.versions.plugin.version>2.19.1</maven.versions.plugin.version>
-        <classmate.version>1.7.1</classmate.version>
+        <lombok.version>1.18.48</lombok.version>
+        <owasp.plugin.version>13.0.0</owasp.plugin.version>
+        <maven.versions.plugin.version>2.22.0</maven.versions.plugin.version>
+        <classmate.version>1.8.0</classmate.version>
     </properties>
 
     <dependencyManagement>
@@ -141,12 +141,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- Build a fully executable jar to use it via /etc/init.d
-                         see https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html
-                    -->
-                    <executable>true</executable>
-                </configuration>
+                <!-- Note: Spring Boot's Maven plugin no longer supports building
+                     "fully executable" jars (embedded launch script, <executable>true</executable>)
+                     since the plugin was aligned with Spring Boot 4 / Spring Framework 7.
+                     The jar is now started the regular way via "java -jar" (see Dockerfile). -->
             </plugin>
             <!-- Some Security and Patch Management related Plugins -->
             <plugin>

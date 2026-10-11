@@ -14,7 +14,8 @@
 
 echo "copy current jars to container assets."
 mkdir -p assets/opt
-cp target/marvin-bot-1.1-SNAPSHOT.jar assets/opt
+rm -f assets/opt/*.jar
+cp target/marvin-bot-*.jar assets/opt/app.jar
 echo "done"
 
 docker rm accsonaut/marvin:latest
