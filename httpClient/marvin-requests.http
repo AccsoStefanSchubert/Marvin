@@ -1,0 +1,26 @@
+### Marvin HTTP Client Requests
+#
+# Example queries for IntelliJ's built-in HTTP Client, matching the endpoints
+# documented in the project README.md.
+#
+# Select an environment (e.g. "dev") in the environment selector of the editor
+# gutter, or adjust {{host}} in http-client.env.json to point to your running
+# Marvin container (default port 8042).
+
+### Healthcheck - Marvin tells you how he feels (http-200 happy / http-429 depressed)
+GET {{host}}/api/check/howareyou
+
+### Initiate Protocol x=88 - be happy and work with no complaints
+GET {{host}}/api/cmd/initiateProtocol/88
+
+### Initiate Protocol x=100 - be unhappy, claim to work too much
+GET {{host}}/api/cmd/initiateProtocol/100
+
+### Initiate Protocol x=9 - play dead, don't answer healthchecks anymore
+GET {{host}}/api/cmd/initiateProtocol/9
+
+### Initiate Protocol x=53 - show Marvin's IP address
+GET {{host}}/api/cmd/initiateProtocol/53
+
+### Initiate Protocol x=-1 - dissolve Marvin (this instance ceases to exist)
+GET {{host}}/api/cmd/initiateProtocol/-1
