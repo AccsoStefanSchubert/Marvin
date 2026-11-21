@@ -13,7 +13,7 @@
         <!-- Taking care to have all spring dependencies right. -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.1</version>
+        <version>4.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -50,7 +50,7 @@
         <java.version>25</java.version>
         <lombok.version>1.18.48</lombok.version>
         <owasp.plugin.version>13.0.0</owasp.plugin.version>
-        <maven.versions.plugin.version>2.22.0</maven.versions.plugin.version>
+        <maven.versions.plugin.version>2.25.2</maven.versions.plugin.version>
         <classmate.version>1.8.0</classmate.version>
     </properties>
 
